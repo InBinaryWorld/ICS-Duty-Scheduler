@@ -1,0 +1,10 @@
+{
+  "Header.Home": "Home",
+  "Header.Planner": "Planner",
+  "Header.Settings": "Settings",
+  "Planner.PickDate": "Pick the data",
+  "Planner.DutyType": "Duty type",
+  "Planner.TimeVariant": "Time variant",
+  "Planner.GenerateICS": "Generate ICS",
+  "Add": "Add"
+}

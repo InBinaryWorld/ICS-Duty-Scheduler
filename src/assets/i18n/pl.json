@@ -1,0 +1,10 @@
+{
+  "Header.Home": "Strona Głowna",
+  "Header.Planner": "Planer",
+  "Header.Settings": "Ustawienia",
+  "Planner.PickDate": "Wybierz datę",
+  "Planner.DutyType": "Typ dyżuru",
+  "Planner.TimeVariant": "Godziny pracy",
+  "Planner.GenerateICS": "Generuj kalendarz ICS",
+  "Add": "Dodaj"
+}

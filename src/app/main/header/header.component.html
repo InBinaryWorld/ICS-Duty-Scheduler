@@ -1,0 +1,22 @@
+<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-cornsilk" xmlns="http://www.w3.org/1999/html">
+  <div class="container-fluid">
+    <span class="navbar-brand">Duty Planner</span>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="order-1 order-sm-0 collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">{{ 'Header.Home' | translate }}</a>
+        <a class="nav-link" routerLink="/planner" routerLinkActive="active">{{ 'Header.Planner' | translate }}</a>
+        <a class="nav-link" routerLink="/settings" routerLinkActive="active">{{ 'Header.Settings' | translate }}</a>
+      </div>
+    </div>
+    <div class="order-0 order-sm-1 ms-3 d-flex flex-column">
+      <a *ngFor="let lang of languages" class="link" [class.active]="currentLang ==lang" (click)="setLang(lang)">
+        {{ lang | uppercase }}
+      </a>
+    </div>
+  </div>
+</nav>
