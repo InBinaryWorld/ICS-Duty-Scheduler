@@ -5,17 +5,20 @@ import { DutyType } from '../../models/duty-type.model';
 
 const defaultVariants: DutyType[] = [
   {
-    id: 'COVID',
-    eventName: 'Dyżur na COVID',
-    place: 'Szpital w Rawiczu'
+    id: 'COVID 🦠',
+    eventName: 'Dyżur COVID 🦠',
+    place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
+      'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }, {
-    id: 'Położnictwo',
-    eventName: 'Dyżur na odziale Położniczym',
-    place: 'Szpital w Rawiczu'
+    id: 'Położnictwo 👩‍⚕',
+    eventName: 'Dyżur Położnictwo 👩‍⚕',
+    place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
+      'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }, {
-    id: 'Dziecięcy',
-    eventName: 'Dyżur na odziale Dziecięcym',
-    place: 'Szpital w Rawiczu'
+    id: 'Dziecięcy 👶🏼',
+    eventName: 'Dyżur Dziecięcy 👶🏼',
+    place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
+      'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }
 ]
 

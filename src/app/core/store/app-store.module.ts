@@ -3,8 +3,6 @@ import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { dutyEventsFeatureName } from './events/duty-events.selectors';
-import { dutyTypesFeatureName } from './duty-types/duty-types.selectors';
-import { dutyTimeVariantsFeatureName } from './time-variants/duty-time-variants.selectors';
 import { DutyTypesStoreModule } from './duty-types/duty-types-store.module';
 import { DutyTimeVariantsStoreModule } from './time-variants/duty-time-variants-store.module';
 import { DutyEventsStoreModule } from './events/duty-events.module';
@@ -14,8 +12,8 @@ function localStorageSyncReducer(reducer: ActionReducer<RootState>): ActionReduc
   return localStorageSync({
     keys: [
       dutyEventsFeatureName,
-      dutyTypesFeatureName,
-      dutyTimeVariantsFeatureName
+      // dutyTypesFeatureName,
+      // dutyTimeVariantsFeatureName
     ],
     rehydrate: true
   })(reducer);
