@@ -17,7 +17,13 @@ export class IcsGeneratorService {
 
   private convertEvents(events: DutyEvent[]): EventAttributes[] {
     return events.map(event => ({
-      start: [event.startDate.getFullYear(), event.startDate.getMonth(), event.startDate.getDate(), event.startDate.getHours(), event.startDate.getMinutes()],
+      start: [
+        event.startDate.getFullYear(),
+        event.startDate.getMonth() + 1,
+        event.startDate.getDate(),
+        event.startDate.getHours(),
+        event.startDate.getMinutes()
+      ],
       duration: event.timeVariant.duration,
       title: event.dutyType.eventName,
       description: undefined,
@@ -29,7 +35,7 @@ export class IcsGeneratorService {
       alarms: undefined,
       productId: 'Duty Planner WebApp',
       busyStatus: 'BUSY'
-    }))
+    }));
   }
 
   private downloadAsFile(text: string): void {
