@@ -44,7 +44,7 @@
             ]
           },
           "configurations": {
-            "prod": {
+            "production": {
               "budgets": [
                 {
                   "type": "initial",
@@ -74,13 +74,13 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "prod"
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "prod": {
-              "browserTarget": "duty-scheduler:build:prod"
+            "production": {
+              "browserTarget": "duty-scheduler:build:production"
             },
             "dev": {
               "browserTarget": "duty-scheduler:build:dev"

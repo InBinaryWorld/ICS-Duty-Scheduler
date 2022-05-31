@@ -12,6 +12,14 @@ const defaultVariants: DutyTimeVariant[] = [
     id: 'Nocka 🌙',
     startTime: { hours: 19, minutes: 0 },
     duration: { days: 0, hours: 12, minutes: 0 }
+  }, {
+    id: '24H ☀️',
+    startTime: { hours: 7, minutes: 0 },
+    duration: { days: 0, hours: 24, minutes: 0 }
+  }, {
+    id: '24H 🌙',
+    startTime: { hours: 19, minutes: 0 },
+    duration: { days: 0, hours: 24, minutes: 0 }
   }
 ]
 

@@ -26,13 +26,14 @@ enum FormKeys {
   styleUrls: ['./planner.component.scss']
 })
 export class PlannerComponent {
-  FormKeys = FormKeys;
 
-  dutyTypes: Observable<DutyType[]> = this.store.select(selectDutyTypesAll);
   timeVariants: Observable<DutyTimeVariant[]> = this.store.select(selectDutyTimeVariantsAll);
-  events: Observable<DutyEvent[]> = this.store.select(selectDutyEventsAll)
-    .pipe(map(eventList => eventList.sort(Comparators.datesComparator(true, event => event.startDate))));
+  dutyTypes: Observable<DutyType[]> = this.store.select(selectDutyTypesAll);
+  events: Observable<DutyEvent[]> = this.store.select(selectDutyEventsAll).pipe(
+    map(eventList => eventList.sort(Comparators.datesComparator(true, event => event.startDate)))
+  );
 
+  FormKeys = FormKeys;
   form: FormGroup;
 
   constructor(protected readonly store: Store<RootState>,
@@ -51,13 +52,15 @@ export class PlannerComponent {
     this.store.dispatch(new DeleteDutyEvent(event.id))
   }
 
-  addEvent(): void {
+  addEvents(): void {
     const data = this.form.value;
-    const event = this.eventGeneratorService.buildEvent(
-      data[FormKeys.DATE],
-      data[FormKeys.TIME],
-      data[FormKeys.TYPE])
-    this.store.dispatch(new AddDutyEvent(event));
+    (data[FormKeys.DATE] as Date[]).forEach(date => {
+      const event = this.eventGeneratorService.buildEvent(
+        date, data[FormKeys.TIME], data[FormKeys.TYPE]
+      );
+      this.store.dispatch(new AddDutyEvent(event));
+    })
+    this.form.reset()
   }
 
   downloadICS(): void {

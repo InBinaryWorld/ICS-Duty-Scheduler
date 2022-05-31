@@ -9,10 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LocalizedDatePipe } from './localized-date/localized-date.pipe';
 import { TranslateModule } from '@ngx-translate/core';
+import { MultiselectCalendar } from './controls/calendar/multiselect-calendar.component';
 
 @NgModule({
   declarations: [
-    LocalizedDatePipe
+    LocalizedDatePipe,
+    MultiselectCalendar
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   exports: [
     LocalizedDatePipe,
+    MultiselectCalendar,
     CommonModule,
     RouterModule,
     ReactiveFormsModule,

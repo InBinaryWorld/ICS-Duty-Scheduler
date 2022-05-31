@@ -1,0 +1,5 @@
+<mat-calendar #calendar
+              [dateClass]="isDateSelected"
+              (touchstart)="markAsTouched()"
+              (selectedChange)="selectDate($event)">
+</mat-calendar>

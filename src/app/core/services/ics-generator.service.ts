@@ -11,7 +11,7 @@ export class IcsGeneratorService {
   public generateAndDownload(events: DutyEvent[]): void {
     const attributes = this.convertEvents(events);
     ics.createEvents(attributes, (error, value) => {
-      !error && this.downloadAsFile(value);
+      !error && IcsGeneratorService.downloadAsFile(value);
     })
   }
 
@@ -38,9 +38,9 @@ export class IcsGeneratorService {
     }));
   }
 
-  private downloadAsFile(text: string): void {
+  private static downloadAsFile(text: string): void {
     const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', 'calendar.ics');
     element.style.display = 'none';
     document.body.appendChild(element);

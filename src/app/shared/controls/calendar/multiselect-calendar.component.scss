@@ -1,0 +1,5 @@
+@use '@angular/material' as mat;
+
+.selected-date div:first-child {
+  background-color: mat.get-color-from-palette(mat.$amber-palette, 50) !important;
+}
