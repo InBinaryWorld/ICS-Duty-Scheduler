@@ -1,0 +1,49 @@
+<h4>{{ 'TimeSettings.Variants' | translate }}</h4>
+<div class="mt-3">
+  <mat-button-toggle-group [formControl]="variantsControl">
+    <mat-button-toggle *ngFor="let type of dutyTimeVariants | async; trackBy: timeTrackBy" [value]="type">
+      {{ type.id }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<form [formGroup]="form">
+  <div class="mt-3">
+    <h6>{{ 'TimeSettings.Name' | translate }}</h6>
+    <input type="text" class="form-control" [formControlName]="FormKeys.NAME">
+  </div>
+  <div class="row mt-3">
+    <div class="col-6">
+      <h6>{{ 'TimeSettings.StartTime' | translate }}</h6>
+      <div class="d-flex flex-row justify-content-center mt-3">
+        <ds-time-picker hourKey="TimePicker.Hour" [formControlName]="FormKeys.START_TIME"></ds-time-picker>
+      </div>
+    </div>
+    <div class="col-6">
+      <h6>{{ 'TimeSettings.Duration' | translate }}</h6>
+      <div class="d-flex flex-row justify-content-center mt-3">
+        <ds-time-picker [maxHours]="72" [formControlName]="FormKeys.DURATION"></ds-time-picker>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row mt-3">
+  <div class="col-9">
+    <button type="button" mat-raised-button class="btn-wide btn-gradient mt-3" color="primary"
+            [disabled]="form.invalid" (click)="addVariant()">
+      {{ 'Save' | translate }}
+    </button>
+  </div>
+  <div class="col-3">
+    <button type="button" mat-raised-button class="btn-wide btn-gradient mt-3" color="primary"
+            [disabled]="variantsControl.invalid" (click)="deleteVariant()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="col-12">
+    <button type="button" mat-raised-button class="btn-wide btn-gradient mt-3" color="primary" (click)="restore()">
+      {{ 'RestoreDefaults' | translate }}
+    </button>
+  </div>
+</div>

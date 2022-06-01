@@ -1,6 +1,6 @@
 {
   "name": "duty-scheduler",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "scripts": {
     "ng": "ng",
     "serve": "ng serve",
@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch -c=dev",
     "test": "ng test",
-    "heroku-postbuild": "ng build -c=dev"
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
@@ -31,9 +31,11 @@
     "@ngrx/store": "^13.2.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@types/lodash-es": "^4.17.6",
     "bootstrap": "^5.1.3",
     "express": "^4.18.1",
     "ics": "^2.35.0",
+    "lodash-es": "^4.17.21",
     "ngrx-store-localstorage": "^13.0.1",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
@@ -54,5 +56,8 @@
   "engines": {
     "node”": "16.14.0",
     "npm": "8.9.0"
+  },
+  "overrides": {
+    "autoprefixer": "10.4.5"
   }
 }

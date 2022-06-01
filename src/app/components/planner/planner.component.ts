@@ -21,7 +21,7 @@ enum FormKeys {
 }
 
 @Component({
-  selector: 'ds-dashboard',
+  selector: 'ds-planner',
   templateUrl: './planner.component.html',
   styleUrls: ['./planner.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ds-dashboard',
+  selector: 'ds-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })

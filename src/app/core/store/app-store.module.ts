@@ -7,13 +7,15 @@ import { DutyTypesStoreModule } from './duty-types/duty-types-store.module';
 import { DutyTimeVariantsStoreModule } from './time-variants/duty-time-variants-store.module';
 import { DutyEventsStoreModule } from './events/duty-events.module';
 import { RootState } from './root-state.model';
+import { dutyTimeVariantsFeatureName } from './time-variants/duty-time-variants.selectors';
+import { dutyTypesFeatureName } from './duty-types/duty-types.selectors';
 
 function localStorageSyncReducer(reducer: ActionReducer<RootState>): ActionReducer<RootState> {
   return localStorageSync({
     keys: [
       dutyEventsFeatureName,
-      // dutyTypesFeatureName,
-      // dutyTimeVariantsFeatureName
+      dutyTypesFeatureName,
+      dutyTimeVariantsFeatureName
     ],
     rehydrate: true
   })(reducer);

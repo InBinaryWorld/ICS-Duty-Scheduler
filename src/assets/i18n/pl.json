@@ -1,10 +1,25 @@
 {
-  "Header.Home": "Strona Głowna",
+  "Header.Home": "Strona Główna",
   "Header.Planner": "Planer",
   "Header.Settings": "Ustawienia",
-  "Planner.PickDate": "Wybierz datę",
+  "Dashboard.Card.Title": "Liczę że się spodoba :D",
+  "Dashboard.Source": "Żródło",
+  "Planner.PickDates": "Dni dyżurów",
   "Planner.DutyType": "Typ dyżuru",
   "Planner.TimeVariant": "Godziny pracy",
   "Planner.GenerateICS": "Generuj kalendarz ICS",
-  "Add": "Dodaj"
+  "TypeSettings.Types": "Zadeklarowane typy",
+  "TypeSettings.Name": "Nazwa",
+  "TypeSettings.FullName": "Nazwa wydarzenia",
+  "TypeSettings.Place": "Miejsce",
+  "TimeSettings.Variants": "Warianty czasowe",
+  "TimePicker.Hour": "Godzina",
+  "TimePicker.Hours": "Godziny",
+  "TimePicker.Minutes": "Minuty",
+  "TimeSettings.Name": "Nazwa",
+  "TimeSettings.StartTime": "Rozpoczęcie",
+  "TimeSettings.Duration": "Czas trwania",
+  "Add": "Dodaj",
+  "Save": "Zapisz",
+  "RestoreDefaults": "Przywróć domyślne"
 }

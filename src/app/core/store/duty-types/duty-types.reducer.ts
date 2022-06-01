@@ -2,45 +2,40 @@ import { DutyTypesState } from './duty-types.state';
 import { DutyTypesActions, DutyTypesActionTypes } from './duty-types.actions';
 import { dutyTypesAdapter } from './duty-types.adapter';
 import { DutyType } from '../../models/duty-type.model';
+import { StoreUtils } from '../utils/store-utils';
 
 const defaultVariants: DutyType[] = [
   {
-    id: 'Dziecięcy 👶🏼',
-    eventName: 'Dyżur Dziecięcy 👶🏼',
+    id: 'Pediatria 👶🏼',
+    eventName: 'Dyżur Pediatria 👶🏼',
     place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
       'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }, {
     id: 'OIOM 🏥',
-    eventName: 'Dyżur COVID 🏥',
+    eventName: 'Dyżur OIOM 🏥',
     place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
       'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }, {
-    id: 'Położnictwo 👩‍⚕',
-    eventName: 'Dyżur Położnictwo 👩‍⚕',
+    id: 'Neo 👩‍⚕',
+    eventName: 'Dyżur Neonantologia 👩‍⚕',
     place: 'Szpital Powiatowy w Rawiczu Sp. z o.o.,\n' +
       'Generała Grota-Roweckiego 6, 63-900 Rawicz, Polska'
   }
-]
+];
 
-const initialState: DutyTypesState = defaultVariants.reduce(
-  (state, variant) => dutyTypesAdapter.addOne(variant, state),
-  dutyTypesAdapter.getInitialState()
-);
+const initialState: DutyTypesState = StoreUtils.initStateForValues(defaultVariants);
 
 export function dutyTypesReducer(
   state: DutyTypesState = initialState,
   action: DutyTypesActions,
 ): DutyTypesState {
   switch (action.type) {
-    case DutyTypesActionTypes.ADD_DUTY_TYPES:
-      return dutyTypesAdapter.addOne(action.dutyType, state);
-    case DutyTypesActionTypes.UPDATE_DUTY_TYPES:
-      return dutyTypesAdapter.updateOne({
-        id: action.id,
-        changes: action.changes,
-      }, state);
+    case DutyTypesActionTypes.SAVE_DUTY_TYPES:
+      return dutyTypesAdapter.upsertOne(action.dutyType, state);
     case DutyTypesActionTypes.DELETE_DUTY_TYPES:
       return dutyTypesAdapter.removeOne(action.id, state);
+    case DutyTypesActionTypes.RESTORE_DEFAULT_DUTY_TYPES:
+      return dutyTypesAdapter.setAll(defaultVariants, state);
     default:
       return state;
   }

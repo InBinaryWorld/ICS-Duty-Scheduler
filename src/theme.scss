@@ -8,12 +8,17 @@ $my-accent: mat.define-palette(mat.$purple-palette, 400);
 // The "warn" palette is optional and defaults to red if not specified.
 $my-warn: mat.define-palette(mat.$red-palette);
 
+$kids-typography: mat.define-typography-config(
+  $font-family: Lato
+);
+
 $my-theme: mat.define-light-theme((
-        color: (
-                primary: $my-primary,
-                accent: $my-accent,
-                warn: $my-warn,
-        )
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  ),
+  typography: $kids-typography,
 ));
 
 @include mat.all-component-themes($my-theme);

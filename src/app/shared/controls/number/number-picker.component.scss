@@ -1,0 +1,34 @@
+$border-radius: 4px;
+
+.number-picker {
+  width: 70px;
+}
+
+.number-arrow {
+  border: solid 1px #e0e0e0;
+
+  &.btn-top {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &.btn-bottom {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+.picker-text {
+  border: solid #e0e0e0;
+  border-width: 0 1px 0 1px;
+  border-radius: 0;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

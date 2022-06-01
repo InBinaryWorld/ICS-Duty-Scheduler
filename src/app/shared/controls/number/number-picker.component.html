@@ -1,0 +1,5 @@
+<div class="d-flex flex-column number-picker">
+  <button class="number-arrow btn-top" (click)="increment()">+</button>
+  <input class="picker-text" type="number" [min]="min" [max]="max" name="test" [(ngModel)]="value"/>
+  <button class="number-arrow btn-bottom" (click)="decrement()">-</button>
+</div>

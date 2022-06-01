@@ -1,0 +1,10 @@
+<form [formGroup]="form" class="d-flex flex-row">
+  <div class="me-2 text-center">
+    <span>{{ hourKey | translate }}</span>
+    <ds-number-picker [formControlName]="FormKeys.HOURS" [min]="0" [max]="maxHours"></ds-number-picker>
+  </div>
+  <div class="text-center">
+    <span>{{ minutesKey | translate }}</span>
+    <ds-number-picker [formControlName]="FormKeys.MINUTES" [min]="0" [max]="59"></ds-number-picker>
+  </div>
+</form>

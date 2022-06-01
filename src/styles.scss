@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+
+
+$elements-in-row: 3;
+$toggle-button-radius: 4px;
 
 body {
-  font-family: 'Cardo', serif !important;
+  font-family: Lato, serif !important;
   background-color: aliceblue !important;
 }
 
@@ -17,4 +21,46 @@ html, body {
 a {
   cursor: pointer;
   text-decoration: none !important;
+}
+
+button.btn-gradient:not([disabled]) {
+  background-image: linear-gradient(135deg, #ffefc9, #fff8e1) !important;
+}
+
+mat-button-toggle-group {
+  width: 100%;
+  flex-wrap: wrap;
+  border: none !important;
+
+  mat-button-toggle {
+    width: calc(100% / #{$elements-in-row});
+    border: solid #e0e0e0;
+    border-width: 0 1px 1px 0 !important;
+
+    &:nth-child(#{$elements-in-row}n+1) {
+      border-left-width: 1px !important;
+    }
+
+    &:nth-child(-n+#{$elements-in-row}) {
+      border-top-width: 1px !important;
+    }
+
+    &:first-child {
+      border-top-left-radius: $toggle-button-radius;
+    }
+
+    &:nth-child(#{$elements-in-row}),
+    &:nth-child(-n+#{$elements-in-row}):last-child {
+      border-top-right-radius: $toggle-button-radius;
+    }
+
+    &:last-child,
+    &:nth-last-child(-n+#{$elements-in-row}):nth-child(#{$elements-in-row}n+#{$elements-in-row}) {
+      border-bottom-right-radius: $toggle-button-radius;
+    }
+
+    &:nth-child(#{$elements-in-row}n+1):nth-last-child(-n+#{$elements-in-row}) {
+      border-bottom-left-radius: $toggle-button-radius;
+    }
+  }
 }

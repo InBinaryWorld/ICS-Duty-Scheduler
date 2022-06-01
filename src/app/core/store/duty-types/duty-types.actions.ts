@@ -1,26 +1,16 @@
 import { Action } from '@ngrx/store';
-import { DutyType } from "../../models/duty-type.model";
+import { DutyType } from '../../models/duty-type.model';
 
 export enum DutyTypesActionTypes {
-  ADD_DUTY_TYPES = '[DutyTypes] Add',
-  UPDATE_DUTY_TYPES = '[DutyTypes] Update',
-  DELETE_DUTY_TYPES = '[DutyTypes] Delete'
+  SAVE_DUTY_TYPES = '[DutyTypes] Save',
+  DELETE_DUTY_TYPES = '[DutyTypes] Delete',
+  RESTORE_DEFAULT_DUTY_TYPES = '[DutyTypes] Restore default'
 }
 
-export class AddDutyType implements Action {
-  readonly type = DutyTypesActionTypes.ADD_DUTY_TYPES;
+export class SaveDutyType implements Action {
+  readonly type = DutyTypesActionTypes.SAVE_DUTY_TYPES;
 
   constructor(public dutyType: DutyType) {
-  }
-}
-
-export class UpdateDutyType implements Action {
-  readonly type = DutyTypesActionTypes.UPDATE_DUTY_TYPES;
-
-  constructor(
-    public id: string,
-    public changes: Partial<DutyType>,
-  ) {
   }
 }
 
@@ -31,7 +21,9 @@ export class DeleteDutyType implements Action {
   }
 }
 
-export type DutyTypesActions
-  = AddDutyType
-  | UpdateDutyType
-  | DeleteDutyType;
+export class RestoreDefaultDutyType implements Action {
+  readonly type = DutyTypesActionTypes.RESTORE_DEFAULT_DUTY_TYPES;
+
+}
+
+export type DutyTypesActions = SaveDutyType | DeleteDutyType | RestoreDefaultDutyType;
